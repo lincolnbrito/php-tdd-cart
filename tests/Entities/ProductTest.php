@@ -14,4 +14,12 @@ class ProductTest extends TestCase
 
         $this->assertInstanceOf(ProductInterface::class, $product);
     }
+
+    public function testProductName()
+    {
+        $product = new Product();
+        $product->setName("Product 1");
+
+        $this->assertEquals("Product 1", $product->getName());
+    }
 }
