@@ -1,7 +1,9 @@
 <?php
-namespace LincolnBrito\Cart\Entities;
+namespace LincolnBrito\Cart;
 
-class Order
+use LincolnBrito\Cart\Entities\ProductInterface;
+
+class Cart
 {
     protected $products;
 

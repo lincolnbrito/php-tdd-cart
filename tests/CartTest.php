@@ -1,11 +1,11 @@
 <?php
-namespace LincolnBrito\Cart\Tests\Entities;          
+namespace LincolnBrito\Cart\Tests;          
 
 use PHPUnit\Framework\TestCase;
-use LincolnBrito\Cart\Entities\Order;
+use LincolnBrito\Cart\Cart;
 use LincolnBrito\Cart\Entities\Product;
 
-class OrderTest extends TestCase
+class CartTest extends TestCase
 {
     public function testGetProductList()
     {
@@ -19,12 +19,12 @@ class OrderTest extends TestCase
         $product2->setDescription("Desc 2");
         $product2->setPrice(20);
 
-        $order = new Order();
-        $order->addProduct($product);
-        $order->addProduct($product2);
+        $cart = new Cart();
+        $cart->addProduct($product);
+        $cart->addProduct($product2);
 
         $products = new \ArrayObject([$product, $product2]);
-        $this->assertEquals($products, $order->getProducts());
+        $this->assertEquals($products, $cart->getProducts());
     }
 
     public function testGetTotal()
@@ -39,11 +39,11 @@ class OrderTest extends TestCase
         $product2->setDescription("Desc 2");
         $product2->setPrice(20);
 
-        $order = new Order();
-        $order->addProduct($product);
-        $order->addProduct($product2);
+        $cart = new Cart();
+        $cart->addProduct($product);
+        $cart->addProduct($product2);
 
         $total = 30;
-        $this->assertEquals($total, $order->getTotal());
+        $this->assertEquals($total, $cart->getTotal());
     }
 }
