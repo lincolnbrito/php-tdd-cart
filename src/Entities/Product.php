@@ -52,6 +52,10 @@ class Product implements ProductInterface
      */
     public function setPrice($price)
     {
+        if(!is_numeric($price)) {
+            throw new \InvalidArgumentException;
+        }
+
         $this->price = $price;
     }
 }

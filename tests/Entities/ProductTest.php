@@ -38,4 +38,13 @@ class ProductTest extends TestCase
 
         $this->assertEquals(10, $product->getPrice());
     }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testPriceValueWhenANotNumericGiven()
+    {
+        $product = new Product();
+        $product->setPrice("asdasdasd");
+    }
 }
