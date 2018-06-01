@@ -38,7 +38,8 @@ jobs:
       - run:
           command: |
             mkdir -p ~/phpunit
-            ./vendor/bin/phpunit --coverage-html phpunit --whitelist=tests --log-junit ~/phpunit/junit.xml tests
+            ./vendor/bin/phpunit --coverage-html phpunit --whitelist=tests --testdox-html ~/phpunit/codecoverage.html
+            
           when: always
       - store_test_results:
           path: ~/phpunit
