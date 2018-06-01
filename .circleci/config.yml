@@ -35,4 +35,12 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
         
       # run tests!
-      - run: ./vendor/bin/phpunit --coverage-html target --whitelist=tests
+      - run:
+          command: |
+            mkdir -p ~/phpunit
+            ./vendor/bin/phpunit --coverage-html phpunit --whitelist=tests --log-junit ~/phpunit/junit.xml tests
+          when: always
+      - store_test_results:
+          path: ~/phpunit
+      - store_artifacts:
+          path: ~/phpunit
