@@ -1,4 +1,4 @@
 
-[![CircleCI](https://img.shields.io/circleci/project/github/lincolnbrito/php-tdd-cart.svg)](https://github.com/lincolnbrito/php-tdd-cart)
+[![CircleCI](https://circleci.com/gh/lincolnbrito/php-tdd-cart.svg?style=shield)](https://circleci.com/gh/lincolnbrito/php-tdd-cart)
 
 # PHP TDD
